@@ -1,0 +1,2 @@
+# nDictionary
+A simple dictionary.
