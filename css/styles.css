@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.btn-play{
+    width: 35px;
+    height: 35px;
+    background-image: url('../assets/svg/volume-up.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: contrast(0.1);
+    border: none;
+}
+
+.btn-play:hover{
+    filter: contrast(1);
+}
+
+.meanings .meaning{
+    border-bottom: solid rgb(220, 220, 220) 1px;
+    margin-bottom: 1rem;
+}
+
+.meanings .meaning:last-child{
+    border: none;
+}
+.meanings .meaning .similar-words .word{
+    border: solid 1px grey;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+    color: rgb(124, 124, 124);
+    padding: 2px 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.meanings .meaning .similar-words .word:hover{
+    background-color: #eee;
+}
+.no-link{
+    text-decoration: none;
+}
