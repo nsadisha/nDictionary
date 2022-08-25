@@ -1,6 +1,6 @@
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
-  });  
+});  
 
 const form = document.querySelector('#dictionary-form')
 const playBtn = element('#play-btn')
@@ -8,16 +8,19 @@ const resultSection = element('#result-section')
 const errorSection = element('#error-section')
 const clearBtn = element('#clear-btn')
 
+//init
+window.addEventListener('load', event => {
+    checkClearBtn()
+})
+
 clearBtn.addEventListener('click', event => {
     form.word.value = ""
+    hideErrorSection()
+    hideResultsSection()
 })
 
 form.word.addEventListener('keyup', event => {
-    if(form.word.value != ""){
-        clearBtn.classList.remove('d-none')
-    }else{
-        clearBtn.classList.add('d-none')
-    }
+    checkClearBtn()
 })
 
 form.addEventListener('submit', event => {
@@ -79,6 +82,14 @@ async function showResults(_data){
     data.meanings.forEach(item => {
         element('#meanings-section').innerHTML += createMeanings(item)
     })
+}
+
+function checkClearBtn(){
+    if(form.word.value != ""){
+        clearBtn.classList.remove('d-none')
+    }else{
+        clearBtn.classList.add('d-none')
+    }
 }
 
 function showResultsSection(){
