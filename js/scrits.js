@@ -15,6 +15,7 @@ window.addEventListener('load', event => {
 
 clearBtn.addEventListener('click', event => {
     form.word.value = ""
+    clearBtn.classList.add('d-none')
     hideErrorSection()
     hideResultsSection()
 })
