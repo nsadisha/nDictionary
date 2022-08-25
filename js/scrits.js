@@ -6,10 +6,19 @@ const form = document.querySelector('#dictionary-form')
 const playBtn = element('#play-btn')
 const resultSection = element('#result-section')
 const errorSection = element('#error-section')
+const clearBtn = element('#clear-btn')
 
-// initial things
-hideResultsSection()
-hideErrorSection()
+clearBtn.addEventListener('click', event => {
+    form.word.value = ""
+})
+
+form.word.addEventListener('keyup', event => {
+    if(form.word.value != ""){
+        clearBtn.classList.remove('d-none')
+    }else{
+        clearBtn.classList.add('d-none')
+    }
+})
 
 form.addEventListener('submit', event => {
     var searchTerm = form.word.value

@@ -3,8 +3,6 @@
     padding: 0;
 }
 
-
-
 .btn-play{
     width: 35px;
     height: 35px;
@@ -42,4 +40,33 @@
 }
 .no-link{
     text-decoration: none;
+}
+.clear-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+}
+.clear-btn svg{
+    vertical-align: top !important;
+    fill: rgb(132, 132, 132);
+    transition: 0.2s;
+}
+.clear-btn svg:hover{
+    fill: black;
+}
+.clear-btn{
+    animation: show 0.2s ease-in-out;
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
